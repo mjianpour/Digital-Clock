@@ -1,0 +1,91 @@
+/* Base Styles - Full Page Black */
+body {
+    background-color: #151515;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Luxury Clock Container */
+.luxury-clock-container {
+    padding: 3rem 4rem;
+    text-align: center;
+    min-width: 400px;
+}
+
+/* Gold Time Display */
+.luxury-time-display {
+    font-size: 4.5rem;
+    color: #f9f9f9;
+    letter-spacing: 3px;
+    margin-bottom: -1rem;
+    font-weight: 500;
+}
+
+.luxury-colon {
+    position: relative;
+    bottom: 0.1em;
+    animation: subtle-pulse 2s infinite;
+}
+
+@keyframes subtle-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Date Display */
+.luxury-date-display {
+    font-size: 1.4rem;
+    color: #fbfbfb;
+    letter-spacing: 1px;
+}
+
+/* Individual Elements */
+.luxury-hours, .luxury-minutes {
+    font-weight: 400;
+}
+
+.luxury-seconds {
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.luxury-day {
+    font-weight: 500;
+}
+
+.luxury-month {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 300;
+}
+
+.luxury-year {
+    font-weight: 300;
+}
+
+/* Optional: Add this for extra luxury */
+.luxury-clock-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    background: linear-gradient(45deg, 
+        transparent, 
+        rgba(212, 175, 55, 0.1), 
+        transparent);
+    z-index: -1;
+    animation: border-glow 6s linear infinite;
+}
+
+@keyframes border-glow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
