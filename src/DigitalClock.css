@@ -38,6 +38,7 @@ body {
 
 /* Date Display */
 .luxury-date-display {
+    margin-top: 9px;
     font-size: 1.4rem;
     color: #fbfbfb;
     letter-spacing: 1px;
