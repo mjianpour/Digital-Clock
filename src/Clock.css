@@ -1,0 +1,106 @@
+/* Luxury Time App Container */
+.luxury-time-app {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #151515;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Tab Container - Fixed at 1/3 of page */
+.luxury-tab-container {
+    position: fixed;
+    top: 40vh;
+    display: flex;
+    gap: 2rem;
+    z-index: 10;
+    padding: 0.3rem 2rem;
+    background-color: rgba(21, 21, 21, 0.9);
+    border-radius: 50px;
+    border: 1px solid rgba(209, 209, 209, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Luxury Tab Buttons */
+.luxury-tab {
+    background: none;
+    border: none;
+    color: #f9f9f9;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding: 0.3rem 1.5rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.luxury-tab:hover {
+    color: #6e6e6e;
+}
+
+.luxury-tab.active {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.luxury-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #ffffff, transparent);
+    animation: tab-underline-glow 2s infinite;
+}
+
+@keyframes tab-underline-glow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* Time Display Container */
+.luxury-time-display-container {
+    margin-top: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Inherit your existing clock styles */
+.luxury-time-display-container > * {
+    padding: 3rem 4rem;
+    text-align: center;
+    min-width: 400px;
+}
+
+/* Optional: Add the border glow effect to active tab */
+.luxury-tab-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    background: linear-gradient(45deg, 
+        transparent, 
+        rgba(200, 200, 200, 0.1), 
+        transparent);
+    z-index: -1;
+    animation: border-glow 6s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes border-glow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
